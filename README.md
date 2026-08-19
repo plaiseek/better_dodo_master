@@ -1,5 +1,5 @@
 After reading the code, it appear that human verification is only performed by the server based on activity periods, nothing client side.
-The folloowing script verifies the webpage JavaScript has not changed before starting.
+The following script verifies the webpage JavaScript has not changed before starting.
 Use it wisely and don't be greedy.
 
  - Open the browser's console (Ctrl+Shift+K on Firefox)
