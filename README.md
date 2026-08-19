@@ -4,7 +4,7 @@ Use it wisely and don't be greedy.
 
  - Open the browser's console (Ctrl+Shift+K on Firefox)
  - Paste the code below
- - Tune `short_wait_range`, `long_wait_range` and `long_wait_prob` to your liking, for a target efficiency
+ - Tune `short_wait_range`, `long_wait_range` and `long_wait_prob` for a target efficiency (exceeding 70% is not recommended)
  - Click Run
  - Sleep
 
