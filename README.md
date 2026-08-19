@@ -7,6 +7,7 @@ Use it wisely and don't be greedy.
  - Tune `short_wait_range`, `long_wait_range` and `long_wait_prob` for a target efficiency (exceeding 70% is not recommended)
  - Click Run
  - Sleep
+ - Reload or close the page to stop
 
 ```javascript
 function sleep_ms(ms) {
