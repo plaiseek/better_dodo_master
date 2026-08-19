@@ -2,6 +2,8 @@ After reading the code, it appear that human verification is only performed by t
 The following script verifies the webpage JavaScript has not changed before starting.
 Use it wisely and don't be greedy.
 
+Read the 'Terms of Use' before not using this script, at your own risks.
+
  - Open the browser's console (Ctrl+Shift+K on Firefox)
  - Paste the code below
  - Tune `short_wait_range`, `long_wait_range` and `long_wait_prob` for a target efficiency (exceeding 70% is not recommended)
