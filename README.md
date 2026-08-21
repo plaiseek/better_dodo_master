@@ -33,11 +33,32 @@ function afk_wait(wait_range_mn) {
     return sleep_ms(ms);
 }
 
+async function verification_check() {
+    // Get verification checkboxes
+    const verification_inputs = [...document.querySelectorAll('input:has(+ span)')]
+        .filter(input => input.nextElementSibling.textContent.trim() === 'Je ne suis pas un robot');
+    if (verification_inputs.length == 0) return false;
+    if (verification_inputs.length > 1) throw new Error('Unexpected "Je ne suis pas un robot" checkboxes count.');
+    // Pass verification
+    verification_inputs[0].click();
+    await ihm_wait(800, 1200);
+    const continue_btns = [...document.querySelectorAll('button')]
+        .filter(btn => btn.textContent.trim() === 'Continuer');
+    if (continue_btns.length != 1) throw new Error('Unexpected "Continuer" buttons count.');
+    continue_btns[0].click();
+    await ihm_wait(1000, 1300);
+    return true;
+}
+
 async function open_pack() {
-    // Click on pack
+    // Click on pack and pass verification if any
     document.querySelector('main button:has(> img)').click();
-    // Wait and get pop-up buttons
     await ihm_wait(2000, 2500);
+    if (await verification_check()) {
+        document.querySelector('main button:has(> img)').click();
+        await ihm_wait(2000, 2500);
+    }
+    // Wait and get pop-up buttons
     let tries = 0;
     let buttons = document.querySelectorAll('main button');
     while (buttons.length != 9) {
