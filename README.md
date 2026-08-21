@@ -3,6 +3,7 @@ The following script verifies the webpage JavaScript has not changed before star
 Use it wisely and don't be greedy.
 
 Read the 'Terms of Use' before not using this script, at your own risks.
+This script is intended exclusively for addict people to help them sleep.
 
  - Open the browser's console (Ctrl+Shift+K on Firefox)
  - Paste the code below
