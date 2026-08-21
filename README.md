@@ -95,7 +95,7 @@ const avg_packs_per_wait = (avg_wait / wait_between_packs) - avg_lost_per_wait;
 const efficiency = 100 * (avg_packs_per_wait / avg_wait) * wait_between_packs;
 
 if ([...document.querySelectorAll("script[src]")]
-    .filter(s => s.src.includes("0rvr33xm1wv0c.js")).length == 1) {
+    .filter(s => s.src.includes("0tukeil_.xtnj.js")).length == 1) {
     console.log(`Started with target efficiency of ${efficiency.toFixed(2)}%.`);
     console.log("Reload page to interrupt.");
     opening_loop().catch(err => console.error('aborted:', err.message));
