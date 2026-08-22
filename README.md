@@ -85,8 +85,9 @@ async function open_pack() {
     continue_btn.click();
 }
 function read_packs_count() {
-    const count_span = document.querySelectorAll('main span')[1];
-    const packs_count = parseInt(count_span.textContent, 10);
+    const spans = [...document.querySelectorAll('main span')];
+  	const count_span = spans[spans.length - 3]; 
+  	const packs_count = parseInt(count_span.textContent, 10);
     if (Number.isNaN(packs_count))
         throw new Error('Failed to read packs count.');
     return packs_count;
