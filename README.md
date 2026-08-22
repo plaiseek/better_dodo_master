@@ -85,12 +85,11 @@ async function open_pack() {
     continue_btn.click();
 }
 function read_packs_count() {
-    const spans = [...document.querySelectorAll('main span')];
-  	const count_span = spans[spans.length - 3]; 
-  	const packs_count = parseInt(count_span.textContent, 10);
-    if (Number.isNaN(packs_count))
-        throw new Error('Failed to read packs count.');
-    return packs_count;
+    const count_spans = [...document.querySelectorAll('main span')]
+  .filter(el => /^\d+$/.test(el.textContent.trim()));
+    if (count_spans.length != 1)
+        throw new Error('Unexpected number of candidates <span> for packs count.');
+  	return parseInt(count_spans[0].textContent, 10);
 }
 async function opening_loop() {
     while (true) {
@@ -105,9 +104,9 @@ async function opening_loop() {
 }
 
 // Waiting configuration to appear natural
-const short_wait_range = [10, 28]; // in minutes (should be lossless)
-const long_wait_range = [55, 80]; // in minutes (should be lossy)
-const long_wait_prob = 0.25;     // probability of long wait
+const short_wait_range = [18, 28]; // in minutes (should be lossless)
+const long_wait_range = [65, 90]; // in minutes (should be lossy)
+const long_wait_prob = 0.4;     // probability of long wait
 // Efficiency calculation (cosmetic)
 const is_pro = document.body.innerHTML.includes("Pack PRO du jour");
 const wait_between_packs = is_pro ? 3 : 10; // pro = 3 mins, free = 10 mins
