@@ -104,9 +104,9 @@ async function opening_loop() {
 }
 
 // Waiting configuration to appear natural
-const short_wait_range = [6, 19]; // in minutes (should be lossless)
+const short_wait_range = [6, 25]; // in minutes (should be lossless)
 const long_wait_range = [45, 90]; // in minutes (should be lossy)
-const long_wait_prob = 0.2;     // probability of long wait
+const long_wait_prob = 0.5;     // probability of long wait
 // Efficiency calculation (cosmetic)
 const is_pro = document.body.innerHTML.includes("Pack PRO du jour");
 const wait_between_packs = is_pro ? 3 : 10; // pro = 3 mins, free = 10 mins
