@@ -30,7 +30,7 @@ function ihm_wait(min_ms, max_ms) {
 }
 function afk_wait(wait_range_mn) {
     const ms =
-        pick_ms(wait_range_mn[0] * 60_000, wait_range_mn[1] * 60_000, 3);
+        pick_ms(wait_range_mn[0] * 60_000, wait_range_mn[1] * 60_000, 2);
     // Print the next wake time
     const wake = new Date(Date.now() + ms);
     console.log(`next wake: ${wake.toLocaleTimeString('fr-FR')}`);
@@ -104,7 +104,7 @@ async function opening_loop() {
 }
 
 // Waiting configuration to appear natural
-const short_wait_range = [6, 25]; // in minutes (should be lossless)
+const short_wait_range = [5, 21]; // in minutes (should be lossless)
 const long_wait_range = [45, 90]; // in minutes (should be lossy)
 const long_wait_prob = 0.5;     // probability of long wait
 // Efficiency calculation (cosmetic)
